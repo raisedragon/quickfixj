@@ -99,6 +99,23 @@
     <message name="XMLnonFIX" msgtype="n" msgcat="admin">
     </message>
     -->
+    <message name="AccountInfoRequest" msgtype="AAA" msgcat="app">
+      <field name="Account" required="Y"/>
+    </message>
+    <message name="AccountInfo" msgtype="AAB" msgcat="app">
+      <field name="Account" required="Y"/>
+      <field name="Currency" required="Y"/>
+      <field name="MarginRatio" required="Y"/>
+      <field name="Balance" required="Y"/>
+      <field name="AvailableForMarginTrading" required="Y"/>
+      <field name="CreditLimit" required="N"/>
+      <field name="SecurityDeposit" required="Y"/>
+      <field name="ClosedPL" required="Y"/>
+      <field name="OpenPL" required="Y"/>
+      <field name="MarginRequirement" required="Y"/>
+      <field name="NetOpenPosition" required="Y"/>
+      <field name="CreditLimitNOP" required="Y"/>
+    </message>
   </messages>
   <components>
     <component name="HopGrp">
@@ -379,5 +396,18 @@
       <value enum="8" description="PASSWORD_EXPIRED"/>
     </field>
     <field number="1410" name="DefaultVerIndicator" type="BOOLEAN"/>
+
+    <field number="1" name="Account" type="STRING"/>
+    <field number="15" name="Currency" type="CURRENCY"/>
+    <field number="5020" name="Balance" type="FLOAT"/>
+    <field number="5021" name="AvailableForMarginTrading" type="FLOAT"/>
+    <field number="5022" name="CreditLimit" type="FLOAT"/>
+    <field number="5023" name="SecurityDeposit" type="FLOAT"/>
+    <field number="5024" name="ClosedPL" type="FLOAT"/>
+    <field number="5025" name="OpenPL" type="FLOAT"/>
+    <field number="5026" name="MarginRequirement" type="FLOAT"/>
+    <field number="5027" name="NetOpenPosition" type="FLOAT"/>
+    <field number="5028" name="CreditLimitNOP" type="FLOAT"/>
+    <field number="898" name="MarginRatio" type="PERCENTAGE"/>
   </fields>
 </fix>

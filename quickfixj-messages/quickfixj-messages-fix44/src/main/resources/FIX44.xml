@@ -809,8 +809,6 @@
       <field name="Text" required="N"/>
       <field name="EncodedTextLen" required="N"/>
       <field name="EncodedText" required="N"/>
-      <field name="SettlDate" required="N"/>
-      <field name="MDEntryID" required="N"/>
     </group>
     <field name="ApplQueueDepth" required="N"/>
     <field name="ApplQueueResolution" required="N"/>
@@ -865,6 +863,7 @@
       <field name="Text" required="N"/>
       <field name="EncodedTextLen" required="N"/>
       <field name="EncodedText" required="N"/>
+      <!-- CFH custom field -->
       <field name="SettlDate" required="N"/>
     </group>
     <field name="ApplQueueDepth" required="N"/>
@@ -3658,6 +3657,23 @@
     <field name="EncodedTextLen" required="N"/>
     <field name="EncodedText" required="N"/>
   </message>
+    <message name="AccountInfoRequest" msgtype="AAA" msgcat="app">
+      <field name="Account" required="Y"/>
+    </message>
+    <message name="AccountInfo" msgtype="AAB" msgcat="app">
+      <field name="Account" required="Y"/>
+      <field name="Currency" required="Y"/>
+      <field name="MarginRatio" required="Y"/>
+      <field name="Balance" required="Y"/>
+      <field name="AvailableForMarginTrading" required="Y"/>
+      <field name="CreditLimit" required="N"/>
+      <field name="SecurityDeposit" required="Y"/>
+      <field name="ClosedPL" required="Y"/>
+      <field name="OpenPL" required="Y"/>
+      <field name="MarginRequirement" required="Y"/>
+      <field name="NetOpenPosition" required="Y"/>
+      <field name="CreditLimitNOP" required="Y"/>
+    </message>
   </messages>
   <components>
     <component name="Instrument">
@@ -6811,5 +6827,15 @@
     <field number="954" name="Nested3PartySubIDType" type="INT"/>
     <field number="955" name="LegContractSettlMonth" type="MONTHYEAR"/>
     <field number="956" name="LegInterestAccrualDate" type="LOCALMKTDATE"/>
+
+    <field number="5020" name="Balance" type="FLOAT"/>
+    <field number="5021" name="AvailableForMarginTrading" type="FLOAT"/>
+    <field number="5022" name="CreditLimit" type="FLOAT"/>
+    <field number="5023" name="SecurityDeposit" type="FLOAT"/>
+    <field number="5024" name="ClosedPL" type="FLOAT"/>
+    <field number="5025" name="OpenPL" type="FLOAT"/>
+    <field number="5026" name="MarginRequirement" type="FLOAT"/>
+    <field number="5027" name="NetOpenPosition" type="FLOAT"/>
+    <field number="5028" name="CreditLimitNOP" type="FLOAT"/>
   </fields>
 </fix>
